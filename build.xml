@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="WebPrac" default="run">
+
+    <property file="build.properties"/>
+
+    <target name="path">
+        <echo>Path</echo>
+        <mkdir dir="${build_dir}"/>
+    </target>
+
+    <target name="clean" depends="path">
+        <echo>Clean</echo>
+        <delete dir="${build_dir}"/>
+    </target>
+
+    <path id="classpath">
+        <fileset dir="lib">
+            <include name="*.jar"/>
+        </fileset>
+    </path>
+
+    <target name="build" depends="path">
+        <echo>Build</echo>
+        <javac srcdir="${java_dir}:${test_dir}"
+               destdir="${build_dir}"
+               includeantruntime="false"
+               classpathref="classpath">
+            <compilerarg value="-Xlint:deprecation"/>
+            <compilerarg value="-Xlint:unchecked"/>
+        </javac>
+    </target>
+
+    <target name="run" depends="build">
+        <echo>Run!</echo>
+        <java classname="Main" classpath="${build_dir}" classpathref="classpath">
+            <classpath>
+                <pathelement path="src/main/resources"/>
+            </classpath>
+        </java>
+    </target>
+
+    <taskdef name="testng" classname="org.testng.TestNGAntTask" classpath="lib/testng-7.4.0.jar"/>
+
+    <target name="test" depends="build, reinit_db">
+        <fileset id="tests" dir="${build_dir}">
+            <include name="*"/>
+        </fileset>
+
+        <testng mode="mixed" classfilesetref="tests" outputdir="${test_build_dir}">
+            <classpath location="${build_dir}"/>
+            <classpath>
+                <fileset dir="${lib_dir}" includes="*.jar"/>
+                <fileset dir="${build_dir}/" includes="*"/>
+                <pathelement path="src/main/resources"/>
+            </classpath>
+            <xmlfileset dir="." includes="testng.xml"/>
+        </testng>
+    </target>
+
+
+    <target name="create_db">
+        <echo>Create DB</echo>
+        <sql classpath="${postgresql_classpath}"
+             driver="${postgresql_driver}"
+             url="${postgresql_localhost}"
+             userid="${postgresql_user}"
+             password="${postgresql_password}"
+             autocommit="True"
+             src="${db_dir}/create_db.sql">
+        </sql>
+    </target>
+
+    <target name="create_tables">
+        <echo>Create tables</echo>
+        <sql classpath="${postgresql_classpath}"
+             driver="${postgresql_driver}"
+             url="${postgresql_localhost}${postgresql_database}"
+             userid="${postgresql_user}"
+             password="${postgresql_password}"
+             autocommit="True"
+             src="${db_dir}/create_tables.sql">
+        </sql>
+    </target>
+
+    <target name="fill_db">
+        <echo>Fill DB</echo>
+        <sql classpath="${postgresql_classpath}"
+             driver="${postgresql_driver}"
+             url="${postgresql_localhost}${postgresql_database}"
+             userid="${postgresql_user}"
+             password="${postgresql_password}"
+             autocommit="True"
+             src="${db_dir}/fill_db.sql">
+        </sql>
+    </target>
+
+    <target name="drop_tables">
+        <echo>Drop tables</echo>
+        <sql classpath="${postgresql_classpath}"
+             driver="${postgresql_driver}"
+             url="${postgresql_localhost}${postgresql_database}"
+             userid="${postgresql_user}"
+             password="${postgresql_password}"
+             autocommit="True"
+             src="${db_dir}/drop_tables.sql">
+        </sql>
+    </target>
+
+    <target name="drop_db">
+        <echo>Drop DB</echo>
+        <sql classpath="${postgresql_classpath}"
+             driver="${postgresql_driver}"
+             url="${postgresql_localhost}"
+             userid="${postgresql_user}"
+             password="${postgresql_password}"
+             autocommit="True"
+             src="${db_dir}/drop_db.sql">
+        </sql>
+    </target>
+
+    <target name="reinit_db" depends="drop_tables, create_tables, fill_db">
+        <echo>Reinit DB</echo>
+    </target>
+</project>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="21" passed="21">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Ant suite" duration-ms="0" started-at="2021-03-29T18:30:48 MSK" finished-at="2021-03-29T18:30:48 MSK">
+    <groups>
+    </groups>
+    <test name="Ant test" duration-ms="0" started-at="2021-03-29T18:30:48 MSK" finished-at="2021-03-29T18:30:48 MSK">
+    </test> <!-- Ant test -->
+  </suite> <!-- Ant suite -->
+  <suite name="TestNG Tests" duration-ms="2882" started-at="2021-03-29T18:30:45 MSK" finished-at="2021-03-29T18:30:48 MSK">
+    <groups>
+    </groups>
+    <test name="learning centre tests" duration-ms="2882" started-at="2021-03-29T18:30:45 MSK" finished-at="2021-03-29T18:30:48 MSK">
+      <class name="test.CourseTest">
+        <test-method status="PASS" signature="addCourse()[pri:0, instance:test.CourseTest@4c70fda8]" name="addCourse" duration-ms="12" started-at="2021-03-29T18:30:47 MSK" finished-at="2021-03-29T18:30:47 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addCourse -->
+        <test-method status="PASS" signature="deleteCourse()[pri:0, instance:test.CourseTest@4c70fda8]" name="deleteCourse" duration-ms="18" started-at="2021-03-29T18:30:47 MSK" finished-at="2021-03-29T18:30:47 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteCourse -->
+        <test-method status="PASS" signature="getCurrentCourses()[pri:0, instance:test.CourseTest@4c70fda8]" name="getCurrentCourses" duration-ms="41" started-at="2021-03-29T18:30:47 MSK" finished-at="2021-03-29T18:30:47 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getCurrentCourses -->
+        <test-method status="PASS" signature="getFinishedCourses()[pri:0, instance:test.CourseTest@4c70fda8]" name="getFinishedCourses" duration-ms="14" started-at="2021-03-29T18:30:47 MSK" finished-at="2021-03-29T18:30:47 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getFinishedCourses -->
+        <test-method status="PASS" signature="updateCourse()[pri:0, instance:test.CourseTest@4c70fda8]" name="updateCourse" duration-ms="9" started-at="2021-03-29T18:30:47 MSK" finished-at="2021-03-29T18:30:47 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateCourse -->
+      </class> <!-- test.CourseTest -->
+      <class name="test.CompanyTest">
+        <test-method status="PASS" signature="addCompany()[pri:0, instance:test.CompanyTest@6767c1fc]" name="addCompany" duration-ms="2426" started-at="2021-03-29T18:30:45 MSK" finished-at="2021-03-29T18:30:47 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addCompany -->
+        <test-method status="PASS" signature="deleteCompany()[pri:0, instance:test.CompanyTest@6767c1fc]" name="deleteCompany" duration-ms="111" started-at="2021-03-29T18:30:47 MSK" finished-at="2021-03-29T18:30:47 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteCompany -->
+        <test-method status="PASS" signature="getCompaniesByName()[pri:0, instance:test.CompanyTest@6767c1fc]" name="getCompaniesByName" duration-ms="7" started-at="2021-03-29T18:30:47 MSK" finished-at="2021-03-29T18:30:47 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getCompaniesByName -->
+        <test-method status="PASS" signature="updateCompany()[pri:0, instance:test.CompanyTest@6767c1fc]" name="updateCompany" duration-ms="8" started-at="2021-03-29T18:30:47 MSK" finished-at="2021-03-29T18:30:47 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateCompany -->
+      </class> <!-- test.CompanyTest -->
+      <class name="test.StudentTest">
+        <test-method status="PASS" signature="addStudent()[pri:0, instance:test.StudentTest@14acaea5]" name="addStudent" duration-ms="3" started-at="2021-03-29T18:30:47 MSK" finished-at="2021-03-29T18:30:47 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addStudent -->
+        <test-method status="PASS" signature="deleteStudent()[pri:0, instance:test.StudentTest@14acaea5]" name="deleteStudent" duration-ms="8" started-at="2021-03-29T18:30:47 MSK" finished-at="2021-03-29T18:30:48 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteStudent -->
+        <test-method status="PASS" signature="getPassedCoursesForStudent()[pri:0, instance:test.StudentTest@14acaea5]" name="getPassedCoursesForStudent" duration-ms="34" started-at="2021-03-29T18:30:48 MSK" finished-at="2021-03-29T18:30:48 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getPassedCoursesForStudent -->
+        <test-method status="PASS" signature="updateStudent()[pri:0, instance:test.StudentTest@14acaea5]" name="updateStudent" duration-ms="5" started-at="2021-03-29T18:30:48 MSK" finished-at="2021-03-29T18:30:48 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateStudent -->
+      </class> <!-- test.StudentTest -->
+      <class name="test.TeacherTest">
+        <test-method status="PASS" signature="addTeacher()[pri:0, instance:test.TeacherTest@46d56d67]" name="addTeacher" duration-ms="4" started-at="2021-03-29T18:30:48 MSK" finished-at="2021-03-29T18:30:48 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addTeacher -->
+        <test-method status="PASS" signature="deleteTeacher()[pri:0, instance:test.TeacherTest@46d56d67]" name="deleteTeacher" duration-ms="17" started-at="2021-03-29T18:30:48 MSK" finished-at="2021-03-29T18:30:48 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteTeacher -->
+        <test-method status="PASS" signature="updateTeacher()[pri:0, instance:test.TeacherTest@46d56d67]" name="updateTeacher" duration-ms="7" started-at="2021-03-29T18:30:48 MSK" finished-at="2021-03-29T18:30:48 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateTeacher -->
+      </class> <!-- test.TeacherTest -->
+      <class name="test.LessonTest">
+        <test-method status="PASS" signature="addLesson()[pri:0, instance:test.LessonTest@224edc67]" name="addLesson" duration-ms="14" started-at="2021-03-29T18:30:47 MSK" finished-at="2021-03-29T18:30:47 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addLesson -->
+        <test-method status="PASS" signature="deleteLesson()[pri:0, instance:test.LessonTest@224edc67]" name="deleteLesson" duration-ms="28" started-at="2021-03-29T18:30:47 MSK" finished-at="2021-03-29T18:30:47 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteLesson -->
+        <test-method status="PASS" signature="getScheduleForStudentUntil()[pri:0, instance:test.LessonTest@224edc67]" name="getScheduleForStudentUntil" duration-ms="35" started-at="2021-03-29T18:30:47 MSK" finished-at="2021-03-29T18:30:47 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getScheduleForStudentUntil -->
+        <test-method status="PASS" signature="getScheduleForTeacherUntil()[pri:0, instance:test.LessonTest@224edc67]" name="getScheduleForTeacherUntil" duration-ms="15" started-at="2021-03-29T18:30:47 MSK" finished-at="2021-03-29T18:30:47 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getScheduleForTeacherUntil -->
+        <test-method status="PASS" signature="updateLesson()[pri:0, instance:test.LessonTest@224edc67]" name="updateLesson" duration-ms="11" started-at="2021-03-29T18:30:47 MSK" finished-at="2021-03-29T18:30:47 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateLesson -->
+      </class> <!-- test.LessonTest -->
+    </test> <!-- learning centre tests -->
+  </suite> <!-- TestNG Tests -->
+</testng-results>

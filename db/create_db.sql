@@ -1,0 +1,1 @@
+CREATE DATABASE learning_center WITH ENCODING 'UTF8';
