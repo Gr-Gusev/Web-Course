@@ -15,4 +15,4 @@ Web-Course in CMC. Spring 2021
   
 - ant reinit_db     - drop tables, create and fill them again
     
-- 'ant' 'test'          - run testng test
+- ant test          - run testng test
