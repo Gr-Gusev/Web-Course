@@ -11,7 +11,7 @@ import java.util.List;
 public class Main {
 
     public static void main(String args[]) throws SQLException {
-
+/*
         System.out.println("=== Companies ===");
         CompanyDAO companyDAO = new CompanyDAOImpl();
         Collection companies = companyDAO.getAllCompanies();
@@ -213,5 +213,6 @@ public class Main {
             Teacher teacher1 = (Teacher) iterator.next();
             System.out.println(teacher1.getName());
         }
+       */
     }
 }
