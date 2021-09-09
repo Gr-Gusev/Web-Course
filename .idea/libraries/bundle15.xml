@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="bundle15">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/glassfish5/glassfish/domains/domain1/osgi-cache/felix/bundle147/version0.0/bundle.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,11 +1,11 @@
-DROP TABLE student_courses;
+DROP TABLE IF EXISTS student_courses;
 
-DROP TABLE lessons;
+DROP TABLE IF EXISTS lessons;
 
-DROP TABLE teachers;
+DROP TABLE IF EXISTS teachers;
 
-DROP TABLE courses;
+DROP TABLE IF EXISTS courses;
 
-DROP TABLE companies;
+DROP TABLE IF EXISTS companies;
 
-DROP TABLE students;
+DROP TABLE IF EXISTS students;

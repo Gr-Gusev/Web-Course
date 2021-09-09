@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="flashlight-agent">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/glassfish5/glassfish/lib/monitor/flashlight-agent.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

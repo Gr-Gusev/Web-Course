@@ -18,10 +18,10 @@ public interface LessonDAO {
 
     public void deleteLesson(Lesson lesson) throws SQLException;
 
-    public List<Lesson> getScheduleForStudentUntil(long student_id, java.util.Date untilDate)
+    public List<Lesson> getScheduleForStudent(long student_id)
             throws SQLException;
 
-    public List<Lesson> getScheduleForTeacherUntil(long teacher_id, java.util.Date untilDate)
+    public List<Lesson> getScheduleForTeacher(long teacher_id)
             throws SQLException;
 
 }

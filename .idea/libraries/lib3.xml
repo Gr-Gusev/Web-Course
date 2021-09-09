@@ -1,0 +1,34 @@
+<component name="libraryTable">
+  <library name="lib3">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/glassfish5/mq/lib/jhall.jar!/" />
+      <root url="jar://$PROJECT_DIR$/glassfish5/mq/lib/glassfish-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/glassfish5/mq/lib/tyrus-standalone-client.jar!/" />
+      <root url="jar://$PROJECT_DIR$/glassfish5/mq/lib/hk2-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/glassfish5/mq/lib/grizzly-framework.jar!/" />
+      <root url="jar://$PROJECT_DIR$/glassfish5/mq/lib/grizzly-http.jar!/" />
+      <root url="jar://$PROJECT_DIR$/glassfish5/mq/lib/imqstomp.jar!/" />
+      <root url="jar://$PROJECT_DIR$/glassfish5/mq/lib/grizzly-http-server.jar!/" />
+      <root url="jar://$PROJECT_DIR$/glassfish5/mq/lib/grizzly-http-servlet.jar!/" />
+      <root url="jar://$PROJECT_DIR$/glassfish5/mq/lib/imqjmx.jar!/" />
+      <root url="jar://$PROJECT_DIR$/glassfish5/mq/lib/grizzly-portunif.jar!/" />
+      <root url="jar://$PROJECT_DIR$/glassfish5/mq/lib/imqbroker.jar!/" />
+      <root url="jar://$PROJECT_DIR$/glassfish5/mq/lib/javax.servlet-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/glassfish5/mq/lib/grizzly-websockets.jar!/" />
+      <root url="jar://$PROJECT_DIR$/glassfish5/mq/lib/fscontext.jar!/" />
+      <root url="jar://$PROJECT_DIR$/glassfish5/mq/lib/imq.jar!/" />
+      <root url="jar://$PROJECT_DIR$/glassfish5/mq/lib/jms.jar!/" />
+      <root url="jar://$PROJECT_DIR$/glassfish5/mq/lib/imqxm.jar!/" />
+      <root url="jar://$PROJECT_DIR$/glassfish5/mq/lib/imqjmsbridge.jar!/" />
+      <root url="jar://$PROJECT_DIR$/glassfish5/mq/lib/jaxm-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/glassfish5/mq/lib/imqutil.jar!/" />
+      <root url="jar://$PROJECT_DIR$/glassfish5/mq/lib/javax.json.jar!/" />
+      <root url="jar://$PROJECT_DIR$/glassfish5/mq/lib/javax.transaction-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/glassfish5/mq/lib/imqservlet.jar!/" />
+      <root url="jar://$PROJECT_DIR$/glassfish5/mq/lib/imqadmin.jar!/" />
+      <root url="jar://$PROJECT_DIR$/glassfish5/mq/lib/imqbridgemgr.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

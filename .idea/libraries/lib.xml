@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/glassfish5/glassfish/lib/appserv-rt.jar!/" />
+      <root url="jar://$PROJECT_DIR$/glassfish5/glassfish/lib/javaee.jar!/" />
+      <root url="jar://$PROJECT_DIR$/glassfish5/glassfish/lib/gf-client.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

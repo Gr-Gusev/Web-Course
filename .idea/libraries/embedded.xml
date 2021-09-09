@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="embedded">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/glassfish5/glassfish/lib/embedded/glassfish-embedded-static-shell.jar!/" />
+      <root url="jar://$PROJECT_DIR$/glassfish5/glassfish/lib/embedded/glassfish-embedded-shell.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

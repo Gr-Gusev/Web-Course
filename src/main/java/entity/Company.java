@@ -86,10 +86,6 @@ public class Company  implements Serializable {
         this.courses = courses;
     }
 
-    //public boolean addCourse(Course course) {
-    //    return courses.add(course);
-    //}
-
     @Override
     public boolean equals(Object o) {
         if (this == o)

@@ -1,0 +1,14 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="TestNG Tests">
+    <test name="learning centre tests">
+        <classes>
+            <class name="test.CompanyTest"/>
+            <class name="test.CourseTest"/>
+            <class name="test.LessonTest"/>
+            <class name="test.StudentTest"/>
+            <class name="test.TeacherTest"/>
+        </classes>
+    </test>
+</suite>

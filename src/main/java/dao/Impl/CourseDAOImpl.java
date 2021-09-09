@@ -7,10 +7,7 @@ import org.hibernate.query.Query;
 import util.HibernateSessionFactoryUtil;
 
 import java.sql.SQLException;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.List;
-import java.util.ArrayList;
+import java.util.*;
 
 public class CourseDAOImpl implements CourseDAO {
 
@@ -58,10 +55,28 @@ public class CourseDAOImpl implements CourseDAO {
         if (session.isOpen()) {
             session.close();
         }
+        courses.sort(new Comparator<Course>() {
+            @Override
+            public int compare(Course o1, Course o2) {
+                return (o1.getId().compareTo(o2.getId()));
+            }
+        });
         return courses;
     }
 
     public void deleteCourse(Course course) throws SQLException {
+        /*LessonDAO lessonDAO = new LessonDAOImpl();
+        Set<Lesson> lessons = course.getLessons();
+        for (Lesson lesson : lessons)
+            lessonDAO.deleteLesson(lesson);
+
+        StudentDAO studentDAO = new StudentDAOImpl();
+        Set<Student> students = course.getStudents();
+        for (Student student : students) {
+            student.deleteFromCourse(course);
+            studentDAO.updateStudent(student);
+        }*/
+
         Session session = null;
         session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         session.beginTransaction();

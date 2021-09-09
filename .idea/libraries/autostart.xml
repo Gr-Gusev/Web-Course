@@ -1,0 +1,24 @@
+<component name="libraryTable">
+  <library name="autostart">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/glassfish5/glassfish/modules/autostart/org.apache.felix.fileinstall.jar!/" />
+      <root url="jar://$PROJECT_DIR$/glassfish5/glassfish/modules/autostart/org.apache.felix.eventadmin.jar!/" />
+      <root url="jar://$PROJECT_DIR$/glassfish5/glassfish/modules/autostart/org.apache.felix.gogo.shell.jar!/" />
+      <root url="jar://$PROJECT_DIR$/glassfish5/glassfish/modules/autostart/osgi-jta.jar!/" />
+      <root url="jar://$PROJECT_DIR$/glassfish5/glassfish/modules/autostart/org.apache.felix.scr.jar!/" />
+      <root url="jar://$PROJECT_DIR$/glassfish5/glassfish/modules/autostart/osgi-http.jar!/" />
+      <root url="jar://$PROJECT_DIR$/glassfish5/glassfish/modules/autostart/osgi-jdbc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/glassfish5/glassfish/modules/autostart/osgi-ejb-container.jar!/" />
+      <root url="jar://$PROJECT_DIR$/glassfish5/glassfish/modules/autostart/osgi-cdi.jar!/" />
+      <root url="jar://$PROJECT_DIR$/glassfish5/glassfish/modules/autostart/osgi-ee-resources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/glassfish5/glassfish/modules/autostart/org.apache.felix.gogo.runtime.jar!/" />
+      <root url="jar://$PROJECT_DIR$/glassfish5/glassfish/modules/autostart/osgi-web-container.jar!/" />
+      <root url="jar://$PROJECT_DIR$/glassfish5/glassfish/modules/autostart/org.apache.felix.configadmin.jar!/" />
+      <root url="jar://$PROJECT_DIR$/glassfish5/glassfish/modules/autostart/osgi-javaee-base.jar!/" />
+      <root url="jar://$PROJECT_DIR$/glassfish5/glassfish/modules/autostart/org.apache.felix.gogo.command.jar!/" />
+      <root url="jar://$PROJECT_DIR$/glassfish5/glassfish/modules/autostart/osgi-jpa.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

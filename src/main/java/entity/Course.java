@@ -11,7 +11,7 @@ import java.util.HashSet;
 public class Course implements Serializable {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "course_id", unique = true, nullable = false)
     private Long id;
 
@@ -31,10 +31,10 @@ public class Course implements Serializable {
     @Column(name = "course_name")
     private String name;
 
-    @OneToMany(mappedBy="course", fetch=FetchType.LAZY)
+    @OneToMany(mappedBy = "course", fetch=FetchType.LAZY)
     private Set<Lesson> lessons = new HashSet<Lesson>(10);
 
-    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "courses")
+    @ManyToMany(mappedBy = "courses", fetch = FetchType.LAZY)
     private Set<Student> students = new HashSet<Student>(10);
 
 

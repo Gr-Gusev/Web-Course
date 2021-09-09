@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="sun-as-jsr88-dm">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/glassfish5/glassfish/lib/deployment/sun-as-jsr88-dm.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

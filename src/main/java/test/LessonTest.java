@@ -112,7 +112,7 @@ public class LessonTest {
     }
 
     @Test
-    public void getScheduleForStudentUntil() throws SQLException {
+    public void getScheduleForStudent() throws SQLException {
         StudentDAO studentDAO = new StudentDAOImpl();
         Student newStudent = new Student("Test student lesson.schedForStudent");
         studentDAO.addStudent(newStudent);
@@ -134,7 +134,7 @@ public class LessonTest {
 
         courseDAO.addCourse(newCourse);
 
-        newStudent.addCourse(newCourse);
+        newStudent.addToCourse(newCourse);
         studentDAO.updateStudent(newStudent);
 
         TeacherDAO teacherDAO = new TeacherDAOImpl();
@@ -143,9 +143,7 @@ public class LessonTest {
 
         java.sql.Timestamp lessonTime1 = new java.sql.Timestamp(curDate.getTime());
         java.sql.Timestamp lessonTime2 = new java.sql.Timestamp(curDate.getTime());
-        java.sql.Timestamp lessonTime3 = new java.sql.Timestamp(curDate.getTime());
         lessonTime2.setTime(lessonTime2.getTime() + dayInMs);
-        lessonTime3.setTime(lessonTime3.getTime() + 7 * dayInMs);
 
         LessonDAO lessonDAO = new LessonDAOImpl();
         Lesson newLesson1 = new Lesson(newCourse, newTeacher, lessonTime1);
@@ -154,22 +152,16 @@ public class LessonTest {
         Lesson newLesson2 = new Lesson(newCourse, newTeacher, lessonTime2);
         lessonDAO.addLesson(newLesson2);
 
-        Lesson newLesson3 = new Lesson(newCourse, newTeacher, lessonTime3);
-        lessonDAO.addLesson(newLesson3);
-
-        java.util.Date until = new java.util.Date();
-        until.setTime(until.getTime() + 6 * dayInMs);
-        Collection<Lesson> schedule = lessonDAO.getScheduleForStudentUntil(newStudent.getId(), until);
+        Collection<Lesson> schedule = lessonDAO.getScheduleForStudent(newStudent.getId());
 
         Assert.assertTrue(schedule.contains(newLesson1));
         Assert.assertTrue(schedule.contains(newLesson2));
-        Assert.assertFalse(schedule.contains(newLesson3));
 
         Assert.assertTrue(schedule.size() == 2);
     }
 
     @Test
-    public void getScheduleForTeacherUntil() throws SQLException {
+    public void getScheduleForTeacher() throws SQLException {
         CompanyDAO companyDAO = new CompanyDAOImpl();
         Company newCompany = new Company("Test company lesson.schedForTeacher",
                 "Test address lesson.schedForTeacher");
@@ -193,9 +185,7 @@ public class LessonTest {
 
         java.sql.Timestamp lessonTime1 = new java.sql.Timestamp(curDate.getTime());
         java.sql.Timestamp lessonTime2 = new java.sql.Timestamp(curDate.getTime());
-        java.sql.Timestamp lessonTime3 = new java.sql.Timestamp(curDate.getTime());
         lessonTime2.setTime(lessonTime2.getTime() + dayInMs);
-        lessonTime3.setTime(lessonTime3.getTime() + 7 * dayInMs);
 
         LessonDAO lessonDAO = new LessonDAOImpl();
         Lesson newLesson1 = new Lesson(newCourse, newTeacher, lessonTime1);
@@ -204,16 +194,10 @@ public class LessonTest {
         Lesson newLesson2 = new Lesson(newCourse, newTeacher, lessonTime2);
         lessonDAO.addLesson(newLesson2);
 
-        Lesson newLesson3 = new Lesson(newCourse, newTeacher, lessonTime3);
-        lessonDAO.addLesson(newLesson3);
-
-        java.util.Date until = new java.util.Date();
-        until.setTime(until.getTime() + 6 * dayInMs);
-        Collection<Lesson> schedule = lessonDAO.getScheduleForTeacherUntil(newTeacher.getId(), until);
+        Collection<Lesson> schedule = lessonDAO.getScheduleForTeacher(newTeacher.getId());
 
         Assert.assertTrue(schedule.contains(newLesson1));
         Assert.assertTrue(schedule.contains(newLesson2));
-        Assert.assertFalse(schedule.contains(newLesson3));
 
         Assert.assertTrue(schedule.size() == 2);
     }

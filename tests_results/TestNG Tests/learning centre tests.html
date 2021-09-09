@@ -1,0 +1,184 @@
+<html>
+<head>
+<title>TestNG:  learning centre tests</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>learning centre tests</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>21/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Tue Sep 07 22:16:22 MSK 2021</td>
+</tr>
+<tr><td>Total time:</td><td>2 seconds (2528 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='test.LessonTest.addLesson()'><b>addLesson</b><br>Test class: test.LessonTest</td>
+<td></td>
+<td>0</td>
+<td>test.LessonTest@6a1aab78</td></tr>
+<tr>
+<td title='test.CourseTest.getFinishedCourses()'><b>getFinishedCourses</b><br>Test class: test.CourseTest</td>
+<td></td>
+<td>0</td>
+<td>test.CourseTest@74ad1f1f</td></tr>
+<tr>
+<td title='test.CompanyTest.updateCompany()'><b>updateCompany</b><br>Test class: test.CompanyTest</td>
+<td></td>
+<td>0</td>
+<td>test.CompanyTest@4d3167f4</td></tr>
+<tr>
+<td title='test.LessonTest.deleteLesson()'><b>deleteLesson</b><br>Test class: test.LessonTest</td>
+<td></td>
+<td>0</td>
+<td>test.LessonTest@6a1aab78</td></tr>
+<tr>
+<td title='test.CourseTest.deleteCourse()'><b>deleteCourse</b><br>Test class: test.CourseTest</td>
+<td></td>
+<td>0</td>
+<td>test.CourseTest@74ad1f1f</td></tr>
+<tr>
+<td title='test.CourseTest.addCourse()'><b>addCourse</b><br>Test class: test.CourseTest</td>
+<td></td>
+<td>0</td>
+<td>test.CourseTest@74ad1f1f</td></tr>
+<tr>
+<td title='test.StudentTest.updateStudent()'><b>updateStudent</b><br>Test class: test.StudentTest</td>
+<td></td>
+<td>0</td>
+<td>test.StudentTest@462d5aee</td></tr>
+<tr>
+<td title='test.CompanyTest.deleteCompany()'><b>deleteCompany</b><br>Test class: test.CompanyTest</td>
+<td></td>
+<td>0</td>
+<td>test.CompanyTest@4d3167f4</td></tr>
+<tr>
+<td title='test.CompanyTest.getCompaniesByName()'><b>getCompaniesByName</b><br>Test class: test.CompanyTest</td>
+<td></td>
+<td>0</td>
+<td>test.CompanyTest@4d3167f4</td></tr>
+<tr>
+<td title='test.StudentTest.deleteStudent()'><b>deleteStudent</b><br>Test class: test.StudentTest</td>
+<td></td>
+<td>0</td>
+<td>test.StudentTest@462d5aee</td></tr>
+<tr>
+<td title='test.TeacherTest.deleteTeacher()'><b>deleteTeacher</b><br>Test class: test.TeacherTest</td>
+<td></td>
+<td>0</td>
+<td>test.TeacherTest@69b0fd6f</td></tr>
+<tr>
+<td title='test.LessonTest.getScheduleForTeacher()'><b>getScheduleForTeacher</b><br>Test class: test.LessonTest</td>
+<td></td>
+<td>0</td>
+<td>test.LessonTest@6a1aab78</td></tr>
+<tr>
+<td title='test.TeacherTest.updateTeacher()'><b>updateTeacher</b><br>Test class: test.TeacherTest</td>
+<td></td>
+<td>0</td>
+<td>test.TeacherTest@69b0fd6f</td></tr>
+<tr>
+<td title='test.TeacherTest.addTeacher()'><b>addTeacher</b><br>Test class: test.TeacherTest</td>
+<td></td>
+<td>0</td>
+<td>test.TeacherTest@69b0fd6f</td></tr>
+<tr>
+<td title='test.LessonTest.updateLesson()'><b>updateLesson</b><br>Test class: test.LessonTest</td>
+<td></td>
+<td>0</td>
+<td>test.LessonTest@6a1aab78</td></tr>
+<tr>
+<td title='test.CourseTest.getCurrentCourses()'><b>getCurrentCourses</b><br>Test class: test.CourseTest</td>
+<td></td>
+<td>0</td>
+<td>test.CourseTest@74ad1f1f</td></tr>
+<tr>
+<td title='test.CompanyTest.addCompany()'><b>addCompany</b><br>Test class: test.CompanyTest</td>
+<td></td>
+<td>1</td>
+<td>test.CompanyTest@4d3167f4</td></tr>
+<tr>
+<td title='test.LessonTest.getScheduleForStudent()'><b>getScheduleForStudent</b><br>Test class: test.LessonTest</td>
+<td></td>
+<td>0</td>
+<td>test.LessonTest@6a1aab78</td></tr>
+<tr>
+<td title='test.StudentTest.addStudent()'><b>addStudent</b><br>Test class: test.StudentTest</td>
+<td></td>
+<td>0</td>
+<td>test.StudentTest@462d5aee</td></tr>
+<tr>
+<td title='test.CourseTest.updateCourse()'><b>updateCourse</b><br>Test class: test.CourseTest</td>
+<td></td>
+<td>0</td>
+<td>test.CourseTest@74ad1f1f</td></tr>
+<tr>
+<td title='test.StudentTest.getPassedCoursesForStudent()'><b>getPassedCoursesForStudent</b><br>Test class: test.StudentTest</td>
+<td></td>
+<td>0</td>
+<td>test.StudentTest@462d5aee</td></tr>
+</table><p>
+</body>
+</html>
