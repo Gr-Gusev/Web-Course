@@ -14,5 +14,19 @@ Web-Course in CMC. Spring 2021
 - ant drop_db       - drop database
   
 - ant reinit_db     - drop tables, create and fill them again
+
+- ant build         - build the app
     
-- ant test          - run testng test
+- ant test          - run testng test for DAO classes
+
+- ant start_glassfish - start GlassFish
+
+- ant stop_glassfish  - stop GlassFish
+
+- ant deploy - deploy the app
+
+- ant undeploy - undeploy the app
+
+- ant redeploy - redeploy the app
+
+- ant webtest - run HTTPUnit tests
