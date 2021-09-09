@@ -48,7 +48,6 @@
         <mapping class="entity.Teacher" />
         <mapping class="entity.Lesson" />
 
-
     </session-factory>
 
 </hibernate-configuration>
