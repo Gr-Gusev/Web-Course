@@ -5,12 +5,14 @@
 
     <target name="path">
         <echo>Path</echo>
-        <mkdir dir="${build_dir}"/>
+        <mkdir dir="${dst_dir}"/>
+        <mkdir dir="${dst_lib}"/>
     </target>
 
     <target name="clean" depends="path">
         <echo>Clean</echo>
-        <delete dir="${build_dir}"/>
+        <delete dir="${dst_dir}"/>
+        <delete dir="${dst_lib}"/>
     </target>
 
     <path id="classpath">
@@ -22,7 +24,7 @@
     <target name="build" depends="path">
         <echo>Build</echo>
         <javac srcdir="${java_dir}:${test_dir}"
-               destdir="${build_dir}"
+               destdir="${dst_dir}"
                includeantruntime="false"
                classpathref="classpath">
             <compilerarg value="-Xlint:deprecation"/>
@@ -32,7 +34,7 @@
 
     <target name="run" depends="build">
         <echo>Run!</echo>
-        <java classname="Main" classpath="${build_dir}" classpathref="classpath">
+        <java classname="Main" classpath="${dst_dir}" classpathref="classpath">
             <classpath>
                 <pathelement path="src/main/resources"/>
             </classpath>
@@ -42,21 +44,40 @@
     <taskdef name="testng" classname="org.testng.TestNGAntTask" classpath="lib/testng-7.4.0.jar"/>
 
     <target name="test" depends="build, reinit_db">
-        <fileset id="tests" dir="${build_dir}">
+        <echo>Test</echo>
+        <fileset id="tests" dir="${dst_dir}">
             <include name="*"/>
         </fileset>
-
-        <testng mode="mixed" classfilesetref="tests" outputdir="${test_build_dir}">
-            <classpath location="${build_dir}"/>
+        <testng mode="mixed" classfilesetref="tests" outputdir="${test_dst_dir}">
+            <classpath location="${dst_dir}"/>
             <classpath>
                 <fileset dir="${lib_dir}" includes="*.jar"/>
-                <fileset dir="${build_dir}/" includes="*"/>
+                <fileset dir="${dst_dir}/" includes="*"/>
                 <pathelement path="src/main/resources"/>
             </classpath>
-            <xmlfileset dir="." includes="testng.xml"/>
+            <xmlfileset dir="war/WEB-INF" includes="testng.xml"/>
         </testng>
     </target>
 
+    <path id="webtestpath">
+        <fileset dir="lib">
+            <include name="*.jar"/>
+        </fileset>
+        <pathelement path="war/WEB-INF/classes"/>
+    </path>
+
+    <target name="webtest" depends="build, reinit_db">
+        <junit printsummary="yes">
+            <formatter type="plain"/>
+            <classpath refid="webtestpath"/>
+            <test name="webtest.WebTest"/>
+        </junit>
+        <move todir="${web_test_dst_dir}">
+            <fileset dir=".">
+                <include name="TEST*"/>
+            </fileset>
+        </move>
+    </target>
 
     <target name="create_db">
         <echo>Create DB</echo>
@@ -121,4 +142,70 @@
     <target name="reinit_db" depends="drop_tables, create_tables, fill_db">
         <echo>Reinit DB</echo>
     </target>
+
+    <target name="redeploy" depends="war, undeploy, deploy">
+        <echo>Redeploy</echo>
+    </target>
+
+    <target name = "start_glassfish">
+        <echo>Start Glassfish</echo>
+        <exec executable = "${asadmin}">
+            <arg value="start-domain"/>
+        </exec>
+    </target>
+
+    <target name = "stop_glassfish">
+        <echo>Stop Glassfish</echo>
+        <exec executable = "${asadmin}">
+            <arg value="stop-domain"/>
+        </exec>
+    </target>
+
+    <target name = "deploy">
+        <echo>Deploy</echo>
+        <exec executable = "${asadmin}">
+            <arg value = "deploy"/>
+            <arg value = "--force=true"/>
+            <arg value = "war/WEB-INF/${war_file}"/>
+        </exec>
+    </target>
+
+    <target name = "undeploy">
+        <echo>Undeploy</echo>
+        <exec executable = "${asadmin}">
+            <arg value = "undeploy"/>
+            <arg value = "${war_name}"/>
+        </exec>
+    </target>
+
+    <target name="war" depends="build">
+        <echo>War</echo>
+        <delete file = "war/WEB-INF/${war_file}"/>
+        <war destfile = "war/WEB-INF/${war_file}" webxml = "war/WEB-INF/web.xml">
+            <fileset dir = "war"/>
+            <lib dir = "${dst_lib}"/>
+            <classes dir = "${dst_dir}"/>
+        </war>
+    </target>
+
+    <target name="copy_resources">
+        <copy todir="war/WEB-INF">
+            <fileset dir="src/main/resources">
+                <include name="**/*.xml" />
+                <include name="**/*.properties" />
+            </fileset>
+        </copy>
+        <copy todir="war/WEB-INF/classes">
+            <fileset dir="src/main/resources">
+                <include name="**/*.xml" />
+                <include name="**/*.properties" />
+            </fileset>
+        </copy>
+        <copy todir="${dst_lib}" flatten="true">
+            <fileset dir="lib">
+                <include name="*.jar" />
+            </fileset>
+        </copy>
+    </target>
+
 </project>
