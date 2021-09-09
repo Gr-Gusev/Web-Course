@@ -1,14 +1,18 @@
 package dao.Impl;
 
 import dao.TeacherDAO;
+
 import entity.Teacher;
+
 import org.hibernate.Session;
 import org.hibernate.query.Query;
+
 import util.HibernateSessionFactoryUtil;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Comparator;
 import java.util.List;
 
 
@@ -58,6 +62,12 @@ public class TeacherDAOImpl implements TeacherDAO {
         if (session.isOpen()) {
             session.close();
         }
+        teachers.sort(new Comparator<Teacher>() {
+            @Override
+            public int compare(Teacher o1, Teacher o2) {
+                return (o1.getId().compareTo(o2.getId()));
+            }
+        });
         return teachers;
     }
 

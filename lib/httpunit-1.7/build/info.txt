@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Sealed: false
+HttpUnit-Version: 1.7
+Build-Date: September 7 2021
+Build-Time: 1427

@@ -57,8 +57,12 @@ public class Student implements Serializable {
         this.courses = courses;
     }
 
-    public boolean addCourse(Course course) {
+    public boolean addToCourse(Course course) {
         return courses.add(course);
+    }
+
+    public boolean deleteFromCourse(Course course) {
+        return courses.remove(course);
     }
 
     @Override

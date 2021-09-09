@@ -96,9 +96,9 @@ public class StudentTest {
 
         StudentDAO studentDAO = new StudentDAOImpl();
         Student newStudent = new Student("Test student.getPassedCourses");
-        newStudent.addCourse(newCourse1);
-        newStudent.addCourse(newCourse2);
-        newStudent.addCourse(newCourse3);
+        newStudent.addToCourse(newCourse1);
+        newStudent.addToCourse(newCourse2);
+        newStudent.addToCourse(newCourse3);
         studentDAO.addStudent(newStudent);
 
         Collection<Course> courses = studentDAO.getPassedCoursesForStudent(newStudent.getId());

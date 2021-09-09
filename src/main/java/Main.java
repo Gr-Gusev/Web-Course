@@ -11,7 +11,6 @@ import java.util.List;
 public class Main {
 
     public static void main(String args[]) throws SQLException {
-/*
         System.out.println("=== Companies ===");
         CompanyDAO companyDAO = new CompanyDAOImpl();
         Collection companies = companyDAO.getAllCompanies();
@@ -135,7 +134,7 @@ public class Main {
             Course course1 = (Course) iterator.next();
             System.out.println(course1.getId() + " " + course1.getName());
         }
-        System.out.println(student.addCourse(course));
+        System.out.println(student.addToCourse(course));
         studentDAO.updateStudent(student);
         courses = student.getCourses();
         iterator = courses.iterator();
@@ -174,9 +173,7 @@ public class Main {
         System.out.println("---Schedule for student:---");
         stud_id = 3;
         System.out.println("id: " + stud_id);
-        java.util.Date date = new java.util.Date();
-        date.setTime(date.getTime() + 20 * 24 * 60 * 60 * 1000);
-        List<Lesson> lessonsList = (List<Lesson>) lessonDAO.getScheduleForStudentUntil(stud_id, date);
+        List<Lesson> lessonsList = (List<Lesson>) lessonDAO.getScheduleForStudent(stud_id);
         iterator = lessonsList.iterator();
         while (iterator.hasNext()) {
             Lesson lesson = (Lesson) iterator.next();
@@ -187,7 +184,7 @@ public class Main {
         System.out.println("---Schedule for teacher:---");
         long teacher_id = 1;
         System.out.println("id: " + teacher_id);
-        lessonsList = lessonDAO.getScheduleForTeacherUntil(teacher_id, date);
+        lessonsList = lessonDAO.getScheduleForTeacher(teacher_id);
         iterator = lessonsList.iterator();
         while (iterator.hasNext()) {
             Lesson lesson = (Lesson) iterator.next();
@@ -213,6 +210,5 @@ public class Main {
             Teacher teacher1 = (Teacher) iterator.next();
             System.out.println(teacher1.getName());
         }
-       */
     }
 }

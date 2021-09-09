@@ -63,6 +63,7 @@ public class LessonDAOImpl implements LessonDAO {
         if (session.isOpen()) {
             session.close();
         }
+        Collections.sort(lessons);
         return lessons;
     }
 
@@ -77,7 +78,7 @@ public class LessonDAOImpl implements LessonDAO {
         }
     }
 
-    public List<Lesson> getScheduleForStudentUntil(long student_id, java.util.Date untilDate)
+    public List<Lesson> getScheduleForStudent(long student_id)
             throws SQLException
     {
         StudentDAO studentDAO = new StudentDAOImpl();
@@ -86,26 +87,23 @@ public class LessonDAOImpl implements LessonDAO {
         Collection<Course> studentCourses = student.getCourses();
         Collection<Course> curCourses = new HashSet<Course>(10);
         for (Course course : studentCourses) {
-            if (course.isActive())
+            if (!course.isFinished())
                 curCourses.add(course);
         }
-
         Collection<Lesson> allLessons = new HashSet<Lesson>(20);
         for (Course course : curCourses) {
             allLessons.addAll(course.getLessons());
         }
-
         List<Lesson> ret = new ArrayList<Lesson>();
         for (Lesson lesson : allLessons) {
-            if (!lesson.isPassed() && lesson.getDateAndTime().before(untilDate))
+            if (!lesson.isPassed())
                 ret.add(lesson);
         }
-
         Collections.sort(ret);
         return ret;
     }
 
-    public List<Lesson> getScheduleForTeacherUntil(long teacher_id, java.util.Date untilDate)
+    public List<Lesson> getScheduleForTeacher(long teacher_id)
             throws SQLException
     {
         TeacherDAO teacherDAO = new TeacherDAOImpl();
@@ -113,12 +111,10 @@ public class LessonDAOImpl implements LessonDAO {
 
         Collection<Lesson> lessons = teacher.getLessons();
         List<Lesson> ret = new ArrayList<Lesson>();
-
         for (Lesson lesson : lessons) {
-            if (!lesson.isPassed() && lesson.getDateAndTime().before(untilDate))
+            if (!lesson.isPassed())
                 ret.add(lesson);
         }
-
         Collections.sort(ret);
         return ret;
     }

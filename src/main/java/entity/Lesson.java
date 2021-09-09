@@ -2,7 +2,6 @@ package entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
@@ -23,12 +22,12 @@ public class Lesson  implements Serializable, Comparable<Lesson> {
     private Teacher teacher;
 
     @Column(name = "date_and_time")
-    private Timestamp dateAndTime;
+    private java.sql.Timestamp dateAndTime;
 
 
     public Lesson() { }
 
-    public Lesson(Course course, Teacher teacher, Timestamp time) {
+    public Lesson(Course course, Teacher teacher, java.sql.Timestamp time) {
         this.course = course;
         this.teacher = teacher;
         this.dateAndTime = time;
@@ -59,11 +58,11 @@ public class Lesson  implements Serializable, Comparable<Lesson> {
         this.teacher = teacher;
     }
 
-    public Timestamp getDateAndTime() {
+    public java.sql.Timestamp getDateAndTime() {
         return dateAndTime;
     }
 
-    public void setDateAndTime(Timestamp dateAndTime) {
+    public void setDateAndTime(java.sql.Timestamp dateAndTime) {
         this.dateAndTime = dateAndTime;
     }
 

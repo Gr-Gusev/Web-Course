@@ -7,10 +7,7 @@ import org.hibernate.query.Query;
 import util.HibernateSessionFactoryUtil;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
 
 public class CompanyDAOImpl implements CompanyDAO {
 
@@ -58,6 +55,12 @@ public class CompanyDAOImpl implements CompanyDAO {
         if (session.isOpen()) {
             session.close();
         }
+        companies.sort(new Comparator<Company>() {
+            @Override
+            public int compare(Company o1, Company o2) {
+                return (o1.getId().compareTo(o2.getId()));
+            }
+        });
         return companies;
     }
 
