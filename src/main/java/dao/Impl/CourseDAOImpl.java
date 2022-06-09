@@ -65,18 +65,6 @@ public class CourseDAOImpl implements CourseDAO {
     }
 
     public void deleteCourse(Course course) throws SQLException {
-        /*LessonDAO lessonDAO = new LessonDAOImpl();
-        Set<Lesson> lessons = course.getLessons();
-        for (Lesson lesson : lessons)
-            lessonDAO.deleteLesson(lesson);
-
-        StudentDAO studentDAO = new StudentDAOImpl();
-        Set<Student> students = course.getStudents();
-        for (Student student : students) {
-            student.deleteFromCourse(course);
-            studentDAO.updateStudent(student);
-        }*/
-
         Session session = null;
         session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         session.beginTransaction();
