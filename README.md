@@ -1,5 +1,5 @@
 # Web-Course
-Web-Course in CMC. Spring 2021
+Web programming course at CMC MSU. Spring 2021
 
 ## Команды сборки для ant:
 
