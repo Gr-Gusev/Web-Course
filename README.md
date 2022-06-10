@@ -8,7 +8,7 @@ Web programming course at CMC MSU. Spring 2021
 Используется сервер приложений GlassFish, фреймворки Hibernate и Spring, СУБД PostgreSQL. Для сборки приложения используется Apache Ant.
 
 Директория db/ содежрит SQL скрипты создания и удаления базы данных и таблиц, заполнения её тестовыми данными.
-db/db_scheme.pdf - схема базы данных
+db/db_scheme.pdf - ![схема базы данных](db/db_scheme.pdf)
 
 Директория glassfish5/ содержит код севера приложений GlassFish.
 
@@ -26,60 +26,41 @@ src/main/java/web/MainController.java - контроллер, осуществл
 
 Файл build.properties содержит данные для настройки доступа к серверу базы данных, названия базы данных и настройки сервера приложений.
 
-! Для подключения к серверу базы данных необходимо задать логин и пароль в файлах build.properties и war/WEB-INF/hibernate.cfg.xml
+*Для подключения к серверу базы данных необходимо задать логин и пароль в файлах build.properties и war/WEB-INF/hibernate.cfg.xml*
 
-Инструкция по развёртыванию приложения (предполагается, что сервер базы данных запущен):
+## Инструкция по развёртыванию приложения:
+(Предполагается, что сервер базы данных запущен)
 
-ant create_db
-
-ant create_tables
-
-ant fill_db (опционально)
-
-ant start_glassfish
-
-ant war
-
-ant deploy
+- ant create_db
+- ant create_tables
+- ant fill_db (опционально)
+- ant start_glassfish
+- ant war
+- ant deploy
 
 Приложение будет доступно по адресу http://localhost:8080/learning_center
 
 Для сворачивания приложения и удаления базы данных:
 
-ant undeploy
-
-ant stop_glassfish
-
-ant drop_db
-
+- ant undeploy
+- ant stop_glassfish
+- ant drop_db
 
 
 ## Команды сборки для ant:
 
 - ant create_db     - создать базу данных
-  
 - ant create_tables - создать таблицы
-  
 - ant fill_db       - заполнить базу данных тестовыми данными
-  
 - ant drop_tables   - удалить таблицы
-  
 - ant drop_db       - удалить базу данных
-  
 - ant reinit_db     - удалить таблицы, создать их снова и заполнить тестовыми данными
-
 - ant build         - скомпилировать Java файлы
-    
 - ant test          - запустить тесты для DAO-классов
-
 - ant start_glassfish - запустить GlassFish
-
 - ant stop_glassfish  - остановить GlassFish
-
 - ant war             - скомпилировать war файл приложения
-
 - ant deploy - развернуть приложение
-
 - ant undeploy - свернуть приложение
-
 - ant webtest - запустить тесты HTTPUnit
+
