@@ -181,6 +181,16 @@
     <target name="war" depends="build">
         <echo>War</echo>
         <delete file = "war/WEB-INF/${war_file}"/>
+        <copy todir="war/WEB-INF/lib">
+            <fileset dir="${lib_dir}">
+                <include name="*.jar" />
+            </fileset>
+        </copy>
+        <copy todir="${dst_dir}">
+            <fileset dir="war/WEB-INF">
+                <include name="hibernate.cfg.xml" />
+            </fileset>
+        </copy>
         <war destfile = "war/WEB-INF/${war_file}" webxml = "war/WEB-INF/web.xml">
             <fileset dir = "war"/>
             <lib dir = "${dst_lib}"/>
