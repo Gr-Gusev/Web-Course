@@ -19,7 +19,7 @@
         </property>
 
         <property name="connection.password">
-            3546
+            password
         </property>
 
         <property name="dialect">
