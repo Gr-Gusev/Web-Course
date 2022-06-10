@@ -1,32 +1,83 @@
 # Web-Course
 Web programming course at CMC MSU. Spring 2021
 
+Практикум 6-го семестра кафедры системного программирования на факультете ВМК МГУ.
+
+В репозитории представлен код web-приложения "Учебный центр (Learning center)". В учебном центре различные компании проводят курсы. Каждый преподаватель работает только в одной компании, но может читать разные курсы, проводимые данной компанией. Студенты могут записываться на любые курсы. Курс состоит из занятий, каждое занятие проводится одним преподавателем. Приложение позволяет администрировать деятельность учебного центра, составлять расписание занятий курсов, получать расписание для преподавателя и студента.
+
+Используется сервер приложений GlassFish, фреймворки Hibernate и Spring, СУБД PostgreSQL.
+
+Директория db/ содежрит SQL скрипты создания и удаления базы данных и таблиц, заполнения её тестовыми данными.
+db/db_scheme.pdf - схема базы данных
+
+Директория glassfish5/ содержит код севера приложений GlassFish.
+
+Директория src/main/java/entity/ содержит реализацию отображения сущностей базы данных на классы Java.
+
+Директория src/main/java/dao/ содержит реализацию взаимодействия с базой данных.
+
+src/main/java/web/MainController.java - контроллер, осуществляющий отображение HTTP-запросов на контроллеры, получиющие необходимые данные (модель) и возвращающие имя JSP-страницы.
+
+Директория war/WEB-INF/pages/ содержит реализацию JSP-страниц.
+
+Директории src/main/java/test и src/main/java/webtest содержат тесты.
+
+Файлы build.xml и testng.xml содержат команды сборки ant.
+
+Файл build.properties содержит данные для настройки доступа к серверу базы данных, названия базы данных и настройки сервера приложений.
+
+Инструкция по развёртыванию приложения (предполагается, что сервер базы данных запущен):
+
+ant create_db
+
+ant create_tables
+
+ant fill_db (опционально)
+
+ant start_glassfish
+
+ant war
+
+ant deploy
+
+Приложение будет доступно по адресу http://localhost:8080/learning_center
+
+Для сворачивания приложения и удаления базы данных:
+
+ant undeploy
+
+ant stop_glassfish
+
+ant drop_db
+
+
+
 ## Команды сборки для ant:
 
-- ant create_db     - create database
+- ant create_db     - создать базу данных
   
-- ant create_tables - create tables
+- ant create_tables - создать таблицы
   
-- ant fill_db       - fill database with test data
+- ant fill_db       - заполнить базу данных тестовыми данными
   
-- ant drop_tables   - drop tables
+- ant drop_tables   - удалить таблицы
   
-- ant drop_db       - drop database
+- ant drop_db       - удалить базу данных
   
-- ant reinit_db     - drop tables, create and fill them again
+- ant reinit_db     - удалить таблицы, создать их снова и заполнить тестовыми данными
 
-- ant build         - build the app
+- ant build         - скомпилировать Java файлы
     
-- ant test          - run testng test for DAO classes
+- ant test          - запустить тесты для DAO-классов
 
-- ant start_glassfish - start GlassFish
+- ant start_glassfish - запустить GlassFish
 
-- ant stop_glassfish  - stop GlassFish
+- ant stop_glassfish  - остановить GlassFish
 
-- ant deploy - deploy the app
+- ant war             - скомпилировать war файл приложения
 
-- ant undeploy - undeploy the app
+- ant deploy - развернуть приложение
 
-- ant redeploy - redeploy the app
+- ant undeploy - свернуть приложение
 
-- ant webtest - run HTTPUnit tests
+- ant webtest - запустить тесты HTTPUnit
